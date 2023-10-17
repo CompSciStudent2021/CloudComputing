@@ -16,24 +16,32 @@ body {
 
 .item:hover {
     box-shadow: 0 0 1em #aaa;
+    transform: scale(1.02);
 }
 
 .item.completed {
     text-decoration: line-through;
+    opacity: 0.7;
 }
 
 .toggles {
-    color: black;
+    color: #555;
+    cursor: pointer;
 }
 
 .name {
     padding-top: 3px;
+    font-size: 1.2em;
+    color: #333;
 }
 
 .remove {
     padding-left: 0;
+    color: #ff6f61;
+    cursor: pointer;
 }
 
 button:focus {
     border: 1px solid #333;
+    outline: none;
 }
