@@ -16,7 +16,7 @@ body {
 
 .item:hover {
     box-shadow: 0 0 1em #aaa;
-    transform: scale(1.02);
+    transform: scale(1.05) rotate(3deg);
 }
 
 .item.completed {
@@ -27,6 +27,7 @@ body {
 .toggles {
     color: #555;
     cursor: pointer;
+    font-size: 1.2em;
 }
 
 .name {
@@ -39,6 +40,7 @@ body {
     padding-left: 0;
     color: #ff6f61;
     cursor: pointer;
+    font-size: 1.5em;
 }
 
 button:focus {
