@@ -16,7 +16,7 @@ body {
 
 .item:hover {
     box-shadow: 0 0 1em #aaa;
-    transform: scale(1.05) rotate(3deg);
+    transform: scale(1.05);
 }
 
 .item.completed {
@@ -46,4 +46,37 @@ body {
 button:focus {
     border: 1px solid #333;
     outline: none;
+}
+
+.banner {
+    color: #fff;
+    text-align: center;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.banner h1 {
+    margin: 0;
+    font-size: 50px;
+    font-weight: bolder;
+    font-family: monospace;
+}
+
+button.deleteAll {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+p.NoItems {
+    color: #ccc;
+    text-align: center;
 }
