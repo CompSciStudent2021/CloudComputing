@@ -13,7 +13,7 @@ const {
     MYSQL_DB_FILE: DB_FILE,
 } = process.env;
 
-let pool;
+let pool, db, dbAll, dbRun;
 
 async function init() {
     const host = HOST_FILE ? fs.readFileSync(HOST_FILE) : HOST;
