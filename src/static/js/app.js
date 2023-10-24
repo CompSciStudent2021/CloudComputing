@@ -127,7 +127,8 @@ function AddItemForm({ onNewItem }) {
                     <Button
                         type="submit"
                         variant="success"
-                        disabled={!newItem.length}
+                        //disabled={!newItem.length}
+			disabled={true} // Disable the add button
                         className={submitting ? 'disabled' : ''}
                     >
                         {submitting ? 'Adding...' : 'Add Item'}
@@ -190,6 +191,7 @@ function ItemDisplay({ item, onItemUpdate, onItemRemoval }) {
                         className="toggles"
                         size="sm"
                         variant="link"
+			disabled={true} // Disable the checkbox
                         onClick={toggleCompletion}
                         aria-label={
                             item.completed
@@ -210,11 +212,13 @@ function ItemDisplay({ item, onItemUpdate, onItemRemoval }) {
                             <Form.Control
                                 type="text"
                                 value={editedName}
+				disable={true} // Disable button
                                 onChange={e => setEditedName(e.target.value)}
                             />
                             <Button
                                 size="sm"
                                 variant="success"
+				disable={true} // Disable button
                                 onClick={saveEdit}
                             >
                                 Save
@@ -228,6 +232,7 @@ function ItemDisplay({ item, onItemUpdate, onItemRemoval }) {
                     <Button
                         size="sm"
                         variant="link"
+			disable={true} // Disable button
                         onClick={removeItem}
                         aria-label="Remove Item"
                     >
@@ -236,6 +241,7 @@ function ItemDisplay({ item, onItemUpdate, onItemRemoval }) {
                     <Button
                         size="sm"
                         variant="link"
+			disabled={true} // Disable button
                         onClick={editItem}
                         aria-label="Edit Item"
                     >
