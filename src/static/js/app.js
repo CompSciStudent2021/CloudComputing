@@ -3,7 +3,7 @@ function App() {
     return (
         <div>
             <div className="banner">
-                <h1>TO DO LIST</h1>
+                <h1>MY TO DO LIST</h1>
             </div>
             <Container>
                 <Row>
@@ -74,8 +74,8 @@ function TodoListCard() {
 
     return (
         <React.Fragment> 
-            <AddItemForm onNewItem={onNewItem} />
-            <button class = "deleteAll" onClick={onDeleteAllItems}>Delete All Items</button>
+            <AddItemForm onNewItem={onNewItem} disabled/>
+            <button class = "deleteAll" onClick={onDeleteAllItems} disabled>Delete All Items</button>
             {items.length === 0 && (
                 <p className="NoItems">No items yet! Add one above!</p>
             )}
@@ -122,14 +122,15 @@ function AddItemForm({ onNewItem }) {
                     type="text"
                     placeholder="New Item"
                     aria-describedby="basic-addon1"
+                    disabled
                 />
                 <InputGroup.Append>
                     <Button
                         type="submit"
                         variant="success"
-                        //disabled={!newItem.length}
-			disabled={true} // Disable the add button
+                        disabled={!newItem.length}
                         className={submitting ? 'disabled' : ''}
+                        disabled
                     >
                         {submitting ? 'Adding...' : 'Add Item'}
                     </Button>
@@ -191,7 +192,6 @@ function ItemDisplay({ item, onItemUpdate, onItemRemoval }) {
                         className="toggles"
                         size="sm"
                         variant="link"
-			disabled={true} // Disable the checkbox
                         onClick={toggleCompletion}
                         aria-label={
                             item.completed
@@ -203,6 +203,7 @@ function ItemDisplay({ item, onItemUpdate, onItemRemoval }) {
                             className={`far ${
                                 item.completed ? 'fa-check-square' : 'fa-square'
                             }`}
+			disabled
                         />
                     </Button>
                 </Col>
@@ -212,14 +213,14 @@ function ItemDisplay({ item, onItemUpdate, onItemRemoval }) {
                             <Form.Control
                                 type="text"
                                 value={editedName}
-				disable={true} // Disable button
                                 onChange={e => setEditedName(e.target.value)}
+				disabled
                             />
                             <Button
                                 size="sm"
                                 variant="success"
-				disable={true} // Disable button
                                 onClick={saveEdit}
+				disabled
                             >
                                 Save
                             </Button>
@@ -232,18 +233,18 @@ function ItemDisplay({ item, onItemUpdate, onItemRemoval }) {
                     <Button
                         size="sm"
                         variant="link"
-			disable={true} // Disable button
                         onClick={removeItem}
                         aria-label="Remove Item"
+                        disabled 
                     >
                         <i className="fa fa-trash text-danger" />
                     </Button>
                     <Button
                         size="sm"
                         variant="link"
-			disabled={true} // Disable button
                         onClick={editItem}
                         aria-label="Edit Item"
+                        disabled
                     >
                         <i className="fa fa-edit" />
                     </Button>
