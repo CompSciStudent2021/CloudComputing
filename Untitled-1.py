@@ -6,6 +6,8 @@ import os
 
 print(f"Provisioning a virtual machine in Azure using Python.")
 
+# New commment for Github
+
 # Acquire credential object using CLI-based authentication.
 credential = AzureCliCredential()
 
